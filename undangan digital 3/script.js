@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 thankYouMsg.classList.add('hidden');
                 kehadiranSelect.style.color = ""; 
                 jumlahSelect.style.color = "";
-            }, 6000); 
+            }, 6000);
         }
     });
 
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ketik();
     }
 
-    // 8. LOGIKA SWIPE KARTU 3D GALERI
+    // 8. LOGIKA SWIPE KARTU 3D GALERI (KIRI/KANAN)
     const stackContainer = document.getElementById('stacked-gallery');
     if (stackContainer) {
         const cards = stackContainer.querySelectorAll('.stacked-card');
@@ -207,78 +207,63 @@ document.addEventListener("DOMContentLoaded", () => {
         function updateCards() {
             cards.forEach((card, index) => {
                 card.classList.remove('active', 'next-1', 'next-2', 'animating-out');
-                
                 let relativeIndex = (index - currentCardIndex + totalCards) % totalCards;
-
-                if (relativeIndex === 0) {
-                    card.classList.add('active');
-                } else if (relativeIndex === 1) {
-                    card.classList.add('next-1');
-                } else if (relativeIndex === 2) {
-                    card.classList.add('next-2');
-                }
+                if (relativeIndex === 0) card.classList.add('active');
+                else if (relativeIndex === 1) card.classList.add('next-1');
+                else if (relativeIndex === 2) card.classList.add('next-2');
             });
         }
-
         updateCards();
 
-        function swipeNextCard() {
+        function swipeNext() {
             if (isAnimating) return;
             isAnimating = true;
-
-            const activeCard = cards[currentCardIndex];
-            activeCard.classList.remove('active');
-            activeCard.classList.add('animating-out');
-
             currentCardIndex = (currentCardIndex + 1) % totalCards;
-            
-            cards.forEach((card, index) => {
-                if (card !== activeCard) {
-                    card.classList.remove('active', 'next-1', 'next-2');
-                    let relativeIndex = (index - currentCardIndex + totalCards) % totalCards;
-                    if (relativeIndex === 0) card.classList.add('active');
-                    else if (relativeIndex === 1) card.classList.add('next-1');
-                    else if (relativeIndex === 2) card.classList.add('next-2');
-                }
-            });
-
-            setTimeout(() => {
-                activeCard.classList.remove('animating-out');
-                isAnimating = false;
-            }, 600); 
+            updateCards();
+            setTimeout(() => { isAnimating = false; }, 600);
         }
 
-        let startY = 0;
+        function swipePrev() {
+            if (isAnimating) return;
+            isAnimating = true;
+            currentCardIndex = (currentCardIndex - 1 + totalCards) % totalCards;
+            updateCards();
+            setTimeout(() => { isAnimating = false; }, 600);
+        }
+
+        let startX = 0;
         stackContainer.addEventListener('touchstart', e => {
-            startY = e.touches[0].clientY;
+            startX = e.touches[0].clientX;
         }, {passive: true});
 
         stackContainer.addEventListener('touchend', e => {
-            let endY = e.changedTouches[0].clientY;
-            if (startY - endY > 40) { 
-                swipeNextCard();
+            let endX = e.changedTouches[0].clientX;
+            let diff = startX - endX;
+            if (Math.abs(diff) > 40) {
+                if (diff > 0) swipeNext();
+                else swipePrev();
             }
         }, {passive: true});
 
         let isDragging = false;
-        let startMouseY = 0;
+        let startMouseX = 0;
         stackContainer.addEventListener('mousedown', e => {
             isDragging = true;
-            startMouseY = e.clientY;
+            startMouseX = e.clientX;
         });
+
         window.addEventListener('mouseup', e => {
             if (!isDragging) return;
             isDragging = false;
-            let endMouseY = e.clientY;
-            if (startMouseY - endMouseY > 40) {
-                swipeNextCard();
+            let diff = startMouseX - e.clientX;
+            if (Math.abs(diff) > 40) {
+                if (diff > 0) swipeNext();
+                else swipePrev();
             }
         });
     }
-
 });
 
-// Copy Account Number Function
 function copyRek(elementId) {
     const text = document.getElementById(elementId).innerText;
     navigator.clipboard.writeText(text).then(() => {
