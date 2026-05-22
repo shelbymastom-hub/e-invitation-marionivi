@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation | Mario & Nivi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop playsinline id="video-background">
+        <source src="video wedding.mp4" type="video/mp4">
+    </video>
+    
+    <audio id="bgm" loop>
+        <source src="back at one.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="mobile-wrapper">
+        
+        <div class="global-video-container">
+            <video autoplay loop muted playsinline id="bg-video">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            <div class="video-mask"></div>
+        </div>
+
+        <div id="intro-screen">
+            <div class="intro-content">
+                <p class="intro-top">THE WEDDING OF</p>
+                <h1 class="intro-title">Mario & Nivi</h1>
+                <div class="intro-guest">
+                    <p>Dear,</p>
+                    <h2 id="guest-name-intro">Guest Name</h2>
+                    <p class="intro-note">You are cordially invited to our wedding.</p>
+                </div>
+                <button id="open-invite-btn" class="retro-btn">
+                    <span class="btn-icon"></span> OPEN INVITATION
+                </button>
+            </div>
+        </div>
+
+        <div id="music-control" class="hidden">♫</div>
+
+        <nav id="bottom-nav" class="hidden">
+            <a href="#home" class="nav-item active" data-target="home">Home</a>
+            <a href="#couple" class="nav-item" data-target="couple">Couple</a>
+            <a href="#event" class="nav-item" data-target="event">Event</a>
+            <a href="#gallery" class="nav-item" data-target="gallery">Gallery</a>
+            <a href="#rsvp" class="nav-item" data-target="rsvp">RSVP</a>
+        </nav>
+
+        <div id="main-content" class="scroll-container hidden">
+            
+            <section id="home" class="section-padding transparent-bg nav-section">
+                <div class="hero-content reveal fade-up">
+                    <p class="retro-subtitle">WE ARE GETTING MARRIED</p>
+                    <h1 class="couple-name">Mario & Nivi</h1>
+                    <p class="date-hero">15 . 08 . 2026</p>
+                    <div class="countdown-wrapper">
+                        <div class="cd-box"><span id="days">00</span><p>Days</p></div>
+                        <div class="cd-box"><span id="hours">00</span><p>Hours</p></div>
+                        <div class="cd-box"><span id="minutes">00</span><p>Minutes</p></div>
+                        <div class="cd-box"><span id="seconds">00</span><p>Seconds</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="couple" class="section-padding clean-bg nav-section">
+                <div class="reveal fade-up text-center mb-40">
+                    <h2 class="section-title">THE COUPLE</h2>
+                    <p class="section-subtitle">Two souls united in love.</p>
+                </div>
+
+                <div class="profile-card reveal fade-up">
+                    <div class="profile-img" style="background-image: url('bg groom.jpg');"></div>
+                    <div class="profile-desc">
+                        <h3 class="profile-name">Mario Salomo Nicholaas Rambing</h3>
+                        <p class="profile-parents">Son of<br>Mr. Joost Cornelius Rambing & Mrs. Nani Maryani </p>
+                        <a href="#" class="ig-link">@mariosalomoo_</a>
+                    </div>
+                </div>
+
+                <div class="profile-divider reveal fade-up">&</div>
+
+                <div class="profile-card reverse reveal fade-up">
+                    <div class="profile-img" style="background-image: url('bg bride.jpg');"></div>
+                    <div class="profile-desc">
+                        <h3 class="profile-name">Niviasta Nathalia Musak</h3>
+                        <p class="profile-parents">Daughter of<br>Mr. Adrinus Octan Yeremias Musak & Mrs. Rita Herawati</p>
+                        <a href="#" class="ig-link">@nivinathalia</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="story" class="section-padding story-bg">
+                <div class="reveal fade-up text-center mb-40">
+                    <h2 class="section-title">OUR JOURNEY</h2>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item reveal fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Across the Miles</h4>
+                            <p>For years, we were just two friends separated by the distance between Indonesia and Dubai. We talked every single day, comfortably sharing our heaviest burdens, our dreams, and our most random stories.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Against the Odds</h4>
+                            <p>In early 2024, we realized friendship simply wasn't enough anymore. We started dating and faced the LDR head-on. We cried, we laughed, and through it all, we built a bond that no distance could ever break.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>The Perfect Balance</h4>
+                            <p>Being the same age and both the firstborns in our families, we were so used to standing strong alone. Together, we finally found a place to let our guards down. We became each other's ultimate support system, filling the voids we had carried for so long.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Our Next Chapter</h4>
+                            <p>On August 15, 2026, we will finally take our vows as lifelong partners. From the friends who shared everything to soulmates sharing a lifetime, we promise to be each other's constant. Through joy and sorrow, in sickness and in health, and no matter what circumstances life may bring, we will always stand by each other's side.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="event" class="section-padding dark-bg text-center nav-section">
+                <div class="reveal fade-up mb-40">
+                    <h2 class="section-title">SAVE THE DATE</h2>
+                </div>
+
+                <div class="event-card reveal fade-up mb-40">
+                    <h3>HOLY MATRIMONY</h3>
+                    <p class="event-date">Saturday, August 15th, 2026</p>
+                    <p class="event-time">09:00 AM - Onwards</p>
+                    <div class="event-line"></div>
+                    <p class="event-venue"><strong>ST. PAULUS CATHOLIC CHURCH DEPOK</strong></p>
+                    <p class="event-address">Jl. Melati No.4, Pancoran Mas, Depok City, West Java 16431</p>
+                    
+                    <div class="map-wrapper mt-20">
+                        <iframe src="https://maps.google.com/maps?q=Gereja%20Santo%20Paulus%20Depok,%20Jl.%20Melati%20No.4,%20Depok&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div style="margin-top: 35px; text-align: center;"> 
+                        <a href="https://www.google.com/maps/place/Gereja+Katolik+Paroki+Santo+Paulus,+Depok/@-6.401094,106.821242,14z/data=!4m6!3m5!1s0x2e69e95738c8d4d5:0xc9f90497b45ba6f9!8m2!3d-6.4010938!4d106.8212418!16s%2Fg%2F113h1g9q7?hl=id&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="retro-btn btn-sm">Open in Google Maps</a>
+                    </div>
+                </div>
+
+                <div class="event-card reveal fade-up">
+                    <h3>WEDDING RECEPTION</h3>
+                    <p class="event-date">Saturday, August 15th, 2026</p>
+                    <p class="event-time">01:00 PM - Onwards</p>
+                    <div class="event-line"></div>
+                    <p class="event-venue"><strong>GRAHA RONATAMA</strong></p>
+                    <p class="event-address">Jl. Dahlia No. 16A, Depok, West Java</p>
+                    
+                    <div class="map-wrapper mt-20">
+                        <iframe src="https://maps.google.com/maps?q=RONATAMA+Graha+Convention+Hall+Depok&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div style="margin-top: 35px; text-align: center;"> 
+                        <a href="https://maps.google.com/?cid=13085823920358029380&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="retro-btn btn-sm">Open in Google Maps</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="section-padding black-bg nav-section no-side-padding">
+                <div class="reveal fade-up text-center mb-40 section-content-padding">
+                    <p class="retro-subtitle">OUR MEMORIES</p>
+                    <h2 class="section-title">GALLERY</h2>
+                </div>
+                
+                <div class="gallery-section-wrapper reveal fade-up">
+                    <div class="stacked-gallery-container" id="stacked-gallery">
+                        <div class="stacked-card"><img src="DSC00407.webp" onerror="this.src='https://via.placeholder.com/400x533/222/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00422.webp" onerror="this.src='https://via.placeholder.com/400x533/333/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00392.webp" onerror="this.src='https://via.placeholder.com/400x533/444/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00384.webp" onerror="this.src='https://via.placeholder.com/400x533/333/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00467.webp" onerror="this.src='https://via.placeholder.com/400x533/444/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00596.webp" onerror="this.src='https://via.placeholder.com/400x533/555/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00675.webp" onerror="this.src='https://via.placeholder.com/400x533/222/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00683.webp" onerror="this.src='https://via.placeholder.com/400x533/111/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00347.webp" onerror="this.src='https://via.placeholder.com/400x533/333/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00284.webp" onerror="this.src='https://via.placeholder.com/400x533/444/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00329.webp" onerror="this.src='https://via.placeholder.com/400x533/555/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00348.webp" onerror="this.src='https://via.placeholder.com/400x533/333/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00371.webp" onerror="this.src='https://via.placeholder.com/400x533/444/fff'"></div>
+                        <div class="stacked-card"><img src="DSC00345.webp" onerror="this.src='https://via.placeholder.com/400x533/555/fff'"></div>
+                    </div>
+                    <p class="swipe-hint">Swipe up to view</p>
+                </div>
+            </section>
+
+            <section id="rsvp" class="section-padding dark-bg nav-section">
+                <div class="reveal fade-up text-center mb-40">
+                    <h2 class="section-title">RSVP & WISHES</h2>
+                    <p class="section-subtitle">Your presence and blessings are the greatest gifts to us.</p>
+                </div>
+
+                <div class="form-wrapper reveal fade-up">
+                    <form id="rsvp-form">
+                        <input type="text" id="nama" placeholder="Full Name" required>
+                        <select id="kehadiran" required>
+                            <option value="" disabled selected hidden>Attendance Confirmation</option>
+                            <option value="hadir">Yes, I will attend</option>
+                            <option value="tidak">Sorry, I cannot attend</option>
+                        </select>
+                        
+                        <div id="jumlah-container">
+                            <select id="jumlah" required>
+                                <option value="" disabled selected hidden>Number of Guests</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                            </select>
+                        </div>
+
+                        <textarea id="ucapan" placeholder="Write your wishes & blessings..." rows="3" required></textarea>
+                        <input type="hidden" id="bahasa" value="en">
+                        <button type="submit" id="btn-submit-rsvp" class="retro-btn w-100">Submit & Get QR Ticket</button>
+                    </form>
+                    
+                    <div id="thank-you-msg" class="hidden mt-20 text-center">
+                        <p style="color: var(--accent); font-size: 12px; font-style: italic;">Thank you for your confirmation. Your blessings mean the world to us.</p>
+                    </div>
+                </div>
+
+                <div class="wishes-container reveal fade-up mt-40">
+                    <div class="wish-box">
+                        <h4>Sarah & John <span class="badge-hadir">Attending</span></h4>
+                        <p>"Happy wedding! Wishing you a lifetime of happiness."</p>
+                    </div>
+                    <div class="wish-box">
+                        <h4>Mr. Budi & Family <span class="badge-hadir">Attending</span></h4>
+                        <p>"Wishing you a smooth journey to the big day. God bless your new family."</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gift" class="section-padding black-bg text-center pb-100">
+                <div class="reveal fade-up mb-40">
+                    <h2 class="section-title">DIGITAL GIFT</h2>
+                    <p class="section-subtitle">For family and friends who wish to send a gift of love.</p>
+                </div>
+
+                <div class="gift-container reveal fade-up">
+                    <div class="bank-card">
+                        <h3 class="bank-name">BCA</h3>
+                        <p class="rek-owner">Name: Mario</p>
+                        <p class="rek-number" id="rek-bca">5865304479</p>
+                        <button class="copy-btn retro-btn btn-sm" onclick="copyRek('rek-bca')">Copy Account Number</button>
+                    </div>
+
+                    <div class="bank-card">
+                        <h3 class="bank-name">BCA</h3>
+                        <p class="rek-owner">Name: Niviasta</p>
+                        <p class="rek-number" id="rek-mandiri">5221465271</p>
+                        <button class="copy-btn retro-btn btn-sm" onclick="copyRek('rek-mandiri')">Copy Account Number</button>
+                    </div>
+
+                    <div class="bank-card">
+                        <h3 class="bank-name">GOPAY</h3>
+                        <p class="rek-owner">Name: Niviasta</p>
+                        <p class="rek-number" id="rek-gopay">081385186468</p>
+                        <button class="copy-btn retro-btn btn-sm" onclick="copyRek('rek-gopay')">Copy Account Number</button>
+                    </div>
+
+                    <div class="bank-card">
+                        <h3 class="bank-name">ADCB</h3>
+                        <p class="rek-owner">Name: Mario</p>
+                        <p class="rek-number" id="rek-adcb">IBAN: AE690030013674020910001</p>
+                        <button class="copy-btn retro-btn btn-sm" onclick="copyRek('rek-adcb')">Copy Account Number</button>
+                    </div>
+                </div>
+                
+                <div class="footer-credit mt-40 reveal fade-up">
+                    <p>Created with ♥ by Mario & Nivi</p>
+                </div>
+            </section>
+
+        </div>
+
+        <div id="ticket-modal" class="modal-overlay hidden">
+            <div class="ticket-card">
+                <div class="close-modal">✕</div>
+                <h3>E-TICKET INVITATION</h3>
+                <div class="ticket-qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=MarioNivi2026" alt="QR">
+                </div>
+                <p class="t-name" id="tiket-nama">GUEST NAME</p>
+                <p class="t-pax" id="tiket-pax">1 Person</p>
+                <p class="t-info">Please present this QR code at the reception desk.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
