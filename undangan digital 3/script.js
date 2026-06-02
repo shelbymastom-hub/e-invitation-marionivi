@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ketik();
     }
 
-    // 8. LOGIKA SWIPE KARTU 3D GALERI (KIRI/KANAN)
+    // 8. LOGIKA SWIPE KARTU 3D GALERI (ORISINAL + TOMBOL NAVIGASI)
     const stackContainer = document.getElementById('stacked-gallery');
     if (stackContainer) {
         const cards = stackContainer.querySelectorAll('.stacked-card');
@@ -230,6 +230,13 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCards();
             setTimeout(() => { isAnimating = false; }, 600);
         }
+
+        // Event Listener untuk Tombol Prev & Next
+        const nextBtn = document.getElementById('next-gal');
+        const prevBtn = document.getElementById('prev-gal');
+        
+        if(nextBtn) nextBtn.addEventListener('click', swipeNext);
+        if(prevBtn) prevBtn.addEventListener('click', swipePrev);
 
         let startX = 0;
         stackContainer.addEventListener('touchstart', e => {
