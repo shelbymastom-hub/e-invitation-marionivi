@@ -128,13 +128,13 @@ body {
 
 /* --- SETTING LOGO WELCOME PAGE --- */
 .intro-logo {
-    margin-bottom: -50px; /* Jarak antara logo dan teks di bawahnya */
+    margin-bottom: -50px; 
     display: flex;
     justify-content: center;
 }
 
 .intro-logo img {
-    width: 174px; /* Silakan ubah angka ini untuk membesarkan/mengecilkan logo */
+    width: 174px; 
     height: auto;
     object-fit: contain;
     margin-top: 70px;
@@ -204,20 +204,18 @@ body {
 .ig-link { font-family: var(--font-mono); font-size: 12px; color: var(--text-light); text-decoration: none; border-bottom: 1px solid #fff; padding-bottom: 2px;}
 .profile-divider { font-family: var(--font-heading); font-size: 30px; text-align: center; color: #ffffff; margin: 30px 0; }
 
-/* Styling untuk teks kutipan */
 .bible {
-    text-align: center;     /* Membuat teks berada di tengah */
-    font-size: 18px;        /* Atur ukuran font di sini */
-    margin-top: 70px;       /* Jarak kosong di bagian atas */
-    margin-bottom: 10px;    /* Jarak kosong di bagian bawah */
+    text-align: center;     
+    font-size: 18px;        
+    margin-top: 70px;       
+    margin-bottom: 10px;    
 }
 
-/* Styling untuk referensi ayat */
 .bible-reference {
-    text-align: center;     /* Membuat teks berada di tengah */
-    font-size: 14px;        /* Atur ukuran font di sini */
-    margin-top: 0px;        /* Jarak kosong di bagian atas */
-    margin-bottom: 0px;    /* Jarak kosong di bagian bawah */
+    text-align: center;     
+    font-size: 14px;        
+    margin-top: 0px;        
+    margin-bottom: 0px;    
 }
 
 /* --- TIMELINE (LOVE STORY) --- */
@@ -250,7 +248,7 @@ body {
 .event-address { font-size: 12px; color: #b6b5b5; }
 .map-wrapper iframe { filter: grayscale(100%) invert(90%); border-radius: 5px; }
 
-/* --- 3D STACKED CARDS GALLERY (KEMBALI KE ASLI) --- */
+/* --- 3D STACKED CARDS GALLERY --- */
 .gallery-section-wrapper {
     display: flex;
     flex-direction: column;
@@ -325,7 +323,6 @@ body {
     z-index: 11;
 }
 
-/* KONTROL NAVIGASI BARU */
 .gallery-controls {
     display: flex;
     align-items: center;
@@ -434,7 +431,7 @@ body {
 .ticket-card h3 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 3px; border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px; }
 .ticket-qr img { width: 150px; height: 150px; margin-bottom: 20px; }
 .t-name { font-family: var(--font-heading); font-size: 24px; font-weight: bold; margin-bottom: 5px; }
-.t-pax { font-size: 12px; color: #666; margin-bottom: 20px; }
+.t-pax { font-size: 12px; color: #666; }
 .t-info { font-size: 10px; color: #888; border-top: 1px solid #eee; padding-top: 15px; }
 
 /* --- TYPEWRITER CURSOR --- */

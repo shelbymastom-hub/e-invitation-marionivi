@@ -89,6 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const kehadiranSelect = document.getElementById('kehadiran');
     const jumlahContainer = document.getElementById('jumlah-container');
     const jumlahSelect = document.getElementById('jumlah');
+    const jumlahAnakContainer = document.getElementById('jumlah-anak-container');
+    const jumlahAnakSelect = document.getElementById('jumlah-anak');
     const btnSubmitRsvp = document.getElementById('btn-submit-rsvp');
     const thankYouMsg = document.getElementById('thank-you-msg');
 
@@ -96,10 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (this.value === 'tidak') {
             jumlahContainer.classList.add('hidden');
             jumlahSelect.removeAttribute('required');
+            jumlahAnakContainer.classList.add('hidden');
+            jumlahAnakSelect.removeAttribute('required');
             btnSubmitRsvp.innerText = "Send Confirmation & Wishes";
         } else {
             jumlahContainer.classList.remove('hidden');
             jumlahSelect.setAttribute('required', 'required');
+            jumlahAnakContainer.classList.remove('hidden');
+            jumlahAnakSelect.setAttribute('required', 'required');
             btnSubmitRsvp.innerText = "Submit & Get QR Ticket";
         }
     });
@@ -111,8 +117,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (kehadiran === 'hadir') {
             const jumlah = jumlahSelect.value;
+            const jumlahAnak = jumlahAnakSelect.value;
+            
             document.getElementById('tiket-nama').innerText = nama.toUpperCase();
-            document.getElementById('tiket-pax').innerText = jumlah + (jumlah === "1" ? " Person" : " People");
+            document.getElementById('tiket-pax').innerText = jumlah + (jumlah === "1" ? " Adult" : " Adults");
+            
+            let textAnak = "0 Children";
+            if (jumlahAnak === "1") textAnak = "1 Child";
+            else if (jumlahAnak === "2") textAnak = "2 Children";
+            document.getElementById('tiket-anak').innerText = textAnak;
+
             ticketModal.classList.remove('hidden');
             thankYouMsg.classList.add('hidden');
         } else {
@@ -124,10 +138,13 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 jumlahContainer.classList.remove('hidden');
                 jumlahSelect.setAttribute('required', 'required');
+                jumlahAnakContainer.classList.remove('hidden');
+                jumlahAnakSelect.setAttribute('required', 'required');
                 btnSubmitRsvp.innerText = "Submit & Get QR Ticket";
                 thankYouMsg.classList.add('hidden');
                 kehadiranSelect.style.color = ""; 
                 jumlahSelect.style.color = "";
+                jumlahAnakSelect.style.color = "";
             }, 6000);
         }
     });
@@ -143,7 +160,78 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 7. EFEK TYPEWRITER UNTUK LOVE STORY
+    // 7. DOWNLOAD TICKET LOGIC (HTML5 CANVAS) - UPDATED
+    const downloadTicketBtn = document.getElementById('download-ticket-btn');
+    downloadTicketBtn.addEventListener('click', () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Memperbesar ukuran canvas agar margin lebih lega
+        canvas.width = 500;
+        canvas.height = 650;
+
+        // Background
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Text Styles
+        ctx.textAlign = 'center';
+        ctx.fillStyle = '#000000';
+
+        // Title
+        ctx.font = 'bold 22px "Cormorant Garamond", serif';
+        // Support browser modern untuk letter-spacing di canvas
+        if (ctx.letterSpacing !== undefined) {
+            ctx.letterSpacing = "3px";
+        }
+        ctx.fillText('E-TICKET INVITATION', 250, 70);
+
+        // Dashed Line
+        ctx.beginPath();
+        ctx.moveTo(50, 110);
+        ctx.lineTo(450, 110);
+        ctx.setLineDash([5, 5]);
+        ctx.strokeStyle = '#cccccc';
+        ctx.stroke();
+
+        // Get Data
+        const guestName = document.getElementById('tiket-nama').innerText;
+        const paxText = document.getElementById('tiket-pax').innerText;
+        const anakText = document.getElementById('tiket-anak').innerText;
+
+        // Draw Image (QR Code) - Centered
+        const qrImg = document.getElementById('qr-img');
+        ctx.drawImage(qrImg, 125, 150, 250, 250);
+
+        // Draw Text Data
+        // Menggunakan parameter maxWidth (400) agar teks otomatis menyusut jika kepanjangan
+        ctx.font = 'bold 36px "Cormorant Garamond", serif';
+        ctx.fillText(guestName, 250, 460, 400);
+
+        ctx.font = '18px "Lora", serif';
+        ctx.fillStyle = '#666666';
+        ctx.fillText(paxText, 250, 500);
+        ctx.fillText(anakText, 250, 530);
+
+        // Info Text (Footer)
+        ctx.font = '14px "Lora", serif';
+        ctx.fillStyle = '#888888';
+        ctx.fillText('Please present this QR code at the reception desk.', 250, 600, 400);
+
+        // Trigger Download
+        try {
+            const dataUrl = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.download = `Wedding_Ticket_${guestName}.png`;
+            link.href = dataUrl;
+            link.click();
+        } catch (err) {
+            console.error("Canvas export failed due to CORS limitations.", err);
+            alert("Could not download automatically. You can take a screenshot of the ticket.");
+        }
+    });
+
+    // 8. EFEK TYPEWRITER UNTUK LOVE STORY
     const timelineItems = document.querySelectorAll('.timeline-item');
 
     timelineItems.forEach(item => {
@@ -196,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ketik();
     }
 
-    // 8. LOGIKA SWIPE KARTU 3D GALERI (ORISINAL + TOMBOL NAVIGASI)
+    // 9. LOGIKA SWIPE KARTU 3D GALERI
     const stackContainer = document.getElementById('stacked-gallery');
     if (stackContainer) {
         const cards = stackContainer.querySelectorAll('.stacked-card');
@@ -231,7 +319,6 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => { isAnimating = false; }, 600);
         }
 
-        // Event Listener untuk Tombol Prev & Next
         const nextBtn = document.getElementById('next-gal');
         const prevBtn = document.getElementById('prev-gal');
         

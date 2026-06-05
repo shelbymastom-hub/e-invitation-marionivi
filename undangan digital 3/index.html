@@ -229,17 +229,18 @@
                         
                         <div id="jumlah-container">
                             <select id="jumlah" required>
-                                <option value="" disabled selected hidden>Number of Guests</option>
-                                <option value="1">1 Person</option>
-                                <option value="2">2 People</option>
+                                <option value="" disabled selected hidden>Number of Guests (Adults)</option>
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
                             </select>
                         </div>
 
-                        <div id="jumlah-container">
-                            <select id="jumlah" required>
+                        <div id="jumlah-anak-container">
+                            <select id="jumlah-anak" required>
                                 <option value="" disabled selected hidden>Number of Children</option>
-                                <option value="1">1 child</option>
-                                <option value="2">2 children</option>
+                                <option value="0">0 Children</option>
+                                <option value="1">1 Child</option>
+                                <option value="2">2 Children</option>
                             </select>
                         </div>
 
@@ -313,10 +314,14 @@
                 <div class="close-modal">✕</div>
                 <h3>E-TICKET INVITATION</h3>
                 <div class="ticket-qr">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=MarioNivi2026" alt="QR">
+                    <img id="qr-img" crossorigin="anonymous" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=MarioNivi2026" alt="QR">
                 </div>
                 <p class="t-name" id="tiket-nama">GUEST NAME</p>
-                <p class="t-pax" id="tiket-pax">1 Person</p>
+                <p class="t-pax" id="tiket-pax" style="margin-bottom: 5px;">1 Adult</p>
+                <p class="t-pax" id="tiket-anak" style="margin-bottom: 20px;">0 Children</p>
+                
+                <button id="download-ticket-btn" class="retro-btn btn-sm" style="margin-bottom: 20px; width: 100%; border-color: #000; color: #000;">Download E-Ticket</button>
+
                 <p class="t-info">Please present this QR code at the reception desk.</p>
             </div>
         </div>
