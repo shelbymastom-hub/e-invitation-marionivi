@@ -74,7 +74,7 @@ body {
 .pb-100 { padding-bottom: 100px; } 
 .section-padding { padding: 80px 25px; position: relative; z-index: 2;}
 .black-bg { background-color: var(--bg-black); }
-.transparent-bg { background-image: url(DSC00392.jpg); background-size: cover; background-position: center;}
+.transparent-bg { background-image: url(DSC00392.webp); background-size: cover; background-position: center;}
 .clean-bg { background-color: transparent; }
 
 .no-side-padding { padding: 80px 0; }
@@ -87,7 +87,7 @@ body {
     letter-spacing: 2px; 
 }
 .section-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 10px; line-height: 1.6; }
-.retro-subtitle { font-size: 12px; color: var(--text-light); text-transform: uppercase; margin-bottom: 15px; }
+.retro-subtitle { font-size: 12px; color: var(--text-light); text-transform: uppercase; margin-top: 300px; margin-bottom: 15px; }
 
 /* --- BUTTONS --- */
 .retro-btn {
@@ -226,12 +226,12 @@ body {
 
 /* --- EVENT & MAP --- */
 .event-card { background: #000000b6; border: 1px solid #222; padding: 40px 20px; border-radius: 10px; }
-.event-card h3 { font-family: var(--font-mono); font-size: 28px; letter-spacing: 2px; margin-bottom: 24px; color: var(--text-light); }
+.event-card h3 { font-family: var(--font-mono); font-size: 24px; letter-spacing: 2px; margin-bottom: 24px; color: var(--text-light); }
 .event-date { font-family: var(--font-heading); font-size: 20px; margin-bottom: 5px; }
-.event-time { font-size: 12px; color: #aaa; }
+.event-time { font-size: 12px; color: #b6b5b5; }
 .event-line { width: 50px; height: 1px; background: #444; margin: 20px auto; }
 .event-venue { font-size: 16px; letter-spacing: 2px; margin-bottom: 5px; }
-.event-address { font-size: 11px; color: #888; }
+.event-address { font-size: 12px; color: #b6b5b5; }
 .map-wrapper iframe { filter: grayscale(100%) invert(90%); border-radius: 5px; }
 
 /* --- 3D STACKED CARDS GALLERY (KEMBALI KE ASLI) --- */
@@ -241,6 +241,10 @@ body {
     align-items: center;
     width: 100%;
     overflow: hidden; 
+}
+
+#gallery .retro-subtitle {
+    margin-top: 0px;
 }
 
 .stacked-gallery-container {
