@@ -204,6 +204,22 @@ body {
 .ig-link { font-family: var(--font-mono); font-size: 12px; color: var(--text-light); text-decoration: none; border-bottom: 1px solid #fff; padding-bottom: 2px;}
 .profile-divider { font-family: var(--font-heading); font-size: 30px; text-align: center; color: #ffffff; margin: 30px 0; }
 
+/* Styling untuk teks kutipan */
+.bible {
+    text-align: center;     /* Membuat teks berada di tengah */
+    font-size: 18px;        /* Atur ukuran font di sini */
+    margin-top: 70px;       /* Jarak kosong di bagian atas */
+    margin-bottom: 10px;    /* Jarak kosong di bagian bawah */
+}
+
+/* Styling untuk referensi ayat */
+.bible-reference {
+    text-align: center;     /* Membuat teks berada di tengah */
+    font-size: 14px;        /* Atur ukuran font di sini */
+    margin-top: 0px;        /* Jarak kosong di bagian atas */
+    margin-bottom: 0px;    /* Jarak kosong di bagian bawah */
+}
+
 /* --- TIMELINE (LOVE STORY) --- */
 .story-bg { 
     background-color: black;
