@@ -74,7 +74,7 @@ body {
 .pb-100 { padding-bottom: 100px; } 
 .section-padding { padding: 80px 25px; position: relative; z-index: 2;}
 .black-bg { background-color: var(--bg-black); }
-.transparent-bg { background-color: rgb(0, 0, 0); }
+.transparent-bg { background-image: url(DSC00392.jpg); background-size: cover; background-position: center;}
 .clean-bg { background-color: transparent; }
 
 .no-side-padding { padding: 80px 0; }
@@ -128,7 +128,7 @@ body {
 
 /* --- SETTING LOGO WELCOME PAGE --- */
 .intro-logo {
-    margin-bottom: 25px; /* Jarak antara logo dan teks di bawahnya */
+    margin-bottom: -50px; /* Jarak antara logo dan teks di bawahnya */
     display: flex;
     justify-content: center;
 }
@@ -137,7 +137,7 @@ body {
     width: 174px; /* Silakan ubah angka ini untuk membesarkan/mengecilkan logo */
     height: auto;
     object-fit: contain;
-    margin-top: 186px;
+    margin-top: 70px;
     margin-bottom: 112px;
 }
 
@@ -167,7 +167,7 @@ body {
 /* --- ANIMATIONS --- */
 .reveal { opacity: 0; transition: opacity 0.8s ease, transform 0.8s ease; will-change: opacity, transform;}
 .fade-up { transform: translateY(30px); }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal.active { opacity: 1; transform: translateY(0);}
 
 /* --- HERO SECTION --- */
 #home { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
